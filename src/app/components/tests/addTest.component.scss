@@ -1,0 +1,57 @@
+$fixedHeightOfTheContainer:600px;
+$margin:20px;
+$padding:20px;
+.testView {
+    display: flex;
+    flex-direction: row;
+}
+
+.formDetails {
+    width: 30%;
+}
+
+.tableDetails {
+    width: 70%
+}
+
+.btn {
+    float: right;
+}
+
+.jumbotron {
+    padding: 25px;
+}
+
+.testView.jumbotron {
+    background-color: plum;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 5px solid #42A948;
+    /* green */
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+    /* red */
+}
+
+.invalid {
+    color: #a94442;
+}
+
+.questionsList {
+    height: $fixedHeightOfTheContainer;
+    border: 1px solid;
+    overflow: scroll;
+    height: calc(100vh - 150px);
+}
+
+.addTests {
+    margin: $margin;
+}
+
+.jumbotron {
+    background-color: #d9edf7;
+}

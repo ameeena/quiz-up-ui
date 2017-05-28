@@ -1,0 +1,14 @@
+<div class="mainDiv">
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">You have scored : {{totalScore}}</h4>
+    </div>
+    <div class="">
+        <ul class="list-group" *ngFor="let question of questionDetails">
+            <li class="list-group-item">{{question.questionName}}</li>
+            <li class="list-group-item list-group-item-success"><strong>Correct Answer:</strong> {{question.correctAnswer}}</li>
+            <li class="list-group-item list-group-item-success" *ngIf="question.isCorrectAnswer"><strong>Selected Answer: </strong> {{question.selectedAnswer}}</li>
+            <li class="list-group-item list-group-item-danger" *ngIf="!question.isCorrectAnswer"> <strong>Selected Answer: </strong> {{question.selectedAnswer}}</li>
+            <hr>
+        </ul>
+    </div>
+</div>

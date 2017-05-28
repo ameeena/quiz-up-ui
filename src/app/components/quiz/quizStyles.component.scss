@@ -1,0 +1,117 @@
+$cardWidth:80%;
+$margin:30px;
+.questionCard {
+    width: $cardWidth;
+}
+
+.row {
+    margin: $margin;
+}
+
+li {
+    display: block;
+    width: 200px;
+    // list-style-position: inside;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// @keyframes appearFromRight {
+//     from {
+//         right: -100%;
+//         top: -100%;
+//         // transform: scale(2.0);
+//     }
+//     to {
+//         right: 0%;
+//         top: 0%;
+//         // transform: scale(1.0);
+//     }
+// }
+// // @-moz-keyframes appearFromRight {
+// //     from {
+// //         right: -100%;
+// //         top: -100%;
+// //         // transform: scale(2.0);
+// //     }
+// //     to {
+// //         right: 0%;
+// //         top: 0%;
+// //         // transform: scale(1.0);
+// //     }
+// // }
+// @-webkit-keyframes appearFromRight {
+//     from {
+//         right: -100%;
+//         top: -100%;
+//         // transform: scale(2.0);
+//     }
+//     to {
+//         right: 0%;
+//         top: 0%;
+//         // transform: scale(1.0);
+//     }
+// }
+// @keyframes appearFromLeft {
+//     from {
+//         left: -100%;
+//         top: -100%;
+//         // transform: scale(2.0);
+//     }
+//     to {
+//         left: 0%;
+//         top: 0%;
+//         // transform: scale(1.0);
+//     }
+// }
+// // @-moz-keyframes appearFromLeft {
+// //     from {
+// //         left: -100%;
+// //         top: -100%;
+// //         // transform: scale(2.0);
+// //     }
+// //     to {
+// //         left: 0%;
+// //         top: 0%;
+// //         // transform: scale(1.0);
+// //     }
+// // }
+// @-webkit-keyframes appearFromLeft {
+//     from {
+//         left: -100%;
+//         top: -100%;
+//         // transform: scale(2.0);
+//     }
+//     to {
+//         left: 0%;
+//         top: 0%;
+//         // transform: scale(1.0);
+//     }
+// }
+// .leftButton {
+//     animation-name: appearFromLeft;
+//     -moz-animation-name: appearFromLeft;
+//     -webkit-animation-name: appearFromLeft;
+//     animation-duration: 2s;
+//     -moz-animation-duration: 2s;
+//     -webkit-animation-duration: 2s;
+//     animation-direction: alternate;
+//     -webkit-animation-direction: alternate;
+//     // animation-delay: 1s;
+//     // -webkit-animation-delay: 1s;
+//     // -moz-animation-delay: 1s;
+// }
+// .rightButton {
+//     animation-name: appearFromRight;
+//     -moz-animation-name: appearFromRight;
+//     -webkit-animation-name: appearFromRight;
+//     animation-duration: 2s;
+//     -moz-animation-duration: 2s;
+//     -webkit-animation-duration: 2s;
+//     animation-direction: alternate;
+//     -webkit-animation-direction: alternate;
+//     animation-delay: 1s;
+//     -webkit-animation-delay: 1s;
+//     -moz-animation-delay: 1s;
+// }

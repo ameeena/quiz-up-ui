@@ -1,0 +1,21 @@
+<div class="mainDiv">
+    <h4 class="display-4"> Users List </h4>
+    <div class="alert alert-danger" *ngIf="isError"><strong>{{errorMessage}}</strong></div>
+    <div class="alert alert-success" *ngIf="isSuccess"><strong>{{successMessage}}</strong></div>
+    <table class="table table-bordered table-info">
+        <thead>
+            <tr>
+                <th>User name</th>
+                <th>User Email</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of userDetailsList">
+                <td>{{users.userName}}</td>
+                <td>{{users.userEmail}}</td>
+                <td><button class="btn btn-danger" role="button" type="button" (click)="deleteUser(users.userName)"> Remove User</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

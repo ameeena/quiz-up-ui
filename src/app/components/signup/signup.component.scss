@@ -1,0 +1,33 @@
+$padding-top-bottom:20px;
+$margin-top-bottom:20px;
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 5px solid #42A948;
+    /* green */
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+    /* red */
+}
+
+.invalid {
+    color: #a94442;
+}
+
+.registrationAndLogin {
+    display: flex;
+    flex-direction: row;
+}
+
+.jumbotron {
+    padding-top: $padding-top-bottom;
+    padding-bottom: $padding-top-bottom;
+    margin-bottom: $margin-top-bottom;
+    margin-top: $margin-top-bottom;
+    // background-color: #d9edf7;
+}
+
+h3 {
+    margin-bottom: $margin-top-bottom;
+}

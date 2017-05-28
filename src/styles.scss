@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "node_modules/bootstrap/scss/bootstrap";
+$footer-color:#006699;
+html,
+body {
+    height: 100%;
+    /*setting this explicitly is important*/
+}
+
+body {
+    display: flex;
+    /*flex superpowers activated! */
+    flex-direction: column;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    color: #222;
+    font-size: 0.9em;
+    // background-repeat: repeat-x, repeat-y;
+    // background-position: center;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b8e1fc+0,a9d2f3+10,90bae4+25,90bcea+37,90bff0+50,6ba8e5+51,a2daf5+83,bdf3fd+100;Blue+Gloss+%231 */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100;Grey+Gloss+%231 */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd', GradientType=0);
+    /* IE6-9 */
+    /*Stack the flex-items (main and footer elements) vertically NOT horizontally*/
+}
+
+my-app {
+    flex: 1 0 auto;
+    /*fill the available space*/
+}
+
+// footer {
+//     flex: 0 0 50px;
+//     padding: 10px;
+//     color: #fff;
+//     background-color: $footer-color;
+//     /*don't grow or shrink - just stay at a height of 90px.*/
+// }
+footer {
+    position: fixed;
+    height: 4vh;
+    background-color: $footer-color;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
+.mainDiv {
+    margin: 20px;
+}

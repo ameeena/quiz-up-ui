@@ -1,0 +1,180 @@
+<div class="row addTests">
+    <div class="testView" class="well col-md-8">
+        <h3 class="display-4"> Add Test </h3>
+        <div class="alert alert-success" *ngIf="isSuccess">{{successMessage}}</div>
+        <div class="alert alert-danger" *ngIf="isError">{{errorMessage}}</div>
+        <form>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="form-group ">
+                        <label> Test Name </label>
+                        <input type="text " [(ngModel)]="testName " name="testName " class="form-control " placeholder="Test Name" required #testNameVal="ngModel" />
+                        <div *ngIf="testNameVal.errors &&(testNameVal.dirty || testNameVal.touched)">
+                            <div class="invalid" [hidden]="!testNameVal.errors.required">
+                                Test name is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="form-group ">
+                        <label>Description </label>
+                        <input type="text " [(ngModel)]="description " name="genre " class="form-control " placeholder="Description" required #descriptionName="ngModel" />
+                        <div *ngIf="descriptionName.errors &&(descriptionName.dirty || descriptionName.touched)">
+                            <div class="invalid" [hidden]="!descriptionName.errors.required">
+                                Description is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label> Domain </label>
+                        <select class="form-control" id="domainName" [(ngModel)]="domain" name="domainNameValue" #domainNameVal="ngModel" class="form-control" required>
+                            <option item="option" *ngFor="let domains of listOfDomains" [value]="domains" >{{domains}}</option><hr>
+                            <div *ngIf="domainNameVal.errors &&(domainNameVal.dirty || domainNameVal.touched)">
+                            <div class="invalid" [hidden]="!domainNameVal.errors.required">
+                                Domain is required
+                            </div>
+                        </div>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="accordian">
+                <div class="jumbotron">
+                    <div id="headingTwo">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Add Question
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="form-group ">
+                                    <label> Question </label>
+                                    <input type="text " [(ngModel)]="question " name="question " class="form-control " placeholder="Add Questions " required #questionName="ngModel" />
+                                    <div *ngIf="questionName.errors &&(questionName.dirty || questionName.touched)">
+                                        <div class="invalid" [hidden]="!questionName.errors.required">
+                                            Question name is required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
+                                    <label> Option1 </label>
+                                    <input type="text " [(ngModel)]="option1 " name="Option1 " class="form-control " placeholder="Option1 " required #option1Val="ngModel" />
+                                    <div *ngIf="option1Val.errors &&(option1Val.dirty || option1Val.touched)">
+                                        <div class="invalid" [hidden]="!option1Val.errors.required">
+                                            Option is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
+                                    <label> Option2 </label>
+                                    <input type="text " [(ngModel)]="option2 " name="Option2 " class="form-control " placeholder="Option2 " required #option2Val="ngModel" />
+                                    <div *ngIf="option2Val.errors &&(option2Val.dirty || option2Val.touched)">
+                                        <div class="invalid" [hidden]="!option2Val.errors.required">
+                                            Option is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
+                                    <label> Option3 </label>
+                                    <input type="text " [(ngModel)]="option3 " name="Option3 " class="form-control " placeholder="Option3 " required #option3Val="ngModel" />
+                                    <div *ngIf="option3Val.errors &&(option3Val.dirty || option3Val.touched)">
+                                        <div class="invalid" [hidden]="!option3Val.errors.required">
+                                            Option is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
+                                    <label> Option4 </label>
+                                    <input type="text " [(ngModel)]="option4 " name="Option4 " class="form-control " placeholder="Option4 " required #option4Val="ngModel" />
+                                    <div *ngIf="option4Val.errors &&(option4Val.dirty || option4Val.touched)">
+                                        <div class="invalid" [hidden]="!option4Val.errors.required">
+                                            Option is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <div class="form-group ">
+                                    <label>Index of the option. (1-4)</label>
+                                    <input type="number " [(ngModel)]="correctAnswerIndex " name="CorrectAnswer " class="form-control " placeholder="1-4" #correctOptionIndexVal="ngModel" />
+                                    <div *ngIf="correctOptionIndexVal.errors &&(correctOptionIndexVal.dirty || correctOptionIndexVal.touched)">
+                                        <div class="invalid" [hidden]="!correctOptionIndexVal.errors.required">
+                                            Index of correct option is required!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" role="button" class="btn btn-primary" (click)="addQuestion($event)" [disabled]="disableAddQuestButton">Add question</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" role="button" class="btn btn-primary" (click)="addTest($event)" [disabled]="disableAddTestButton">Add Test</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-4 well questionsList">
+        <h5 class="display-4"> Questions List </h5>
+        <hr>
+        <div class="alert alert-danger" *ngIf="maxLengthReached">{{maxQuesLengthReachedMsg}}</div>
+        <ul class="list-group" *ngFor="let question of tests.questions let index=index">
+            <li class="list-group-item list-group-item-warning"><strong>#{{index+1}} : {{question.questionName}}</strong>
+                <button type="button" role="button" class="btn btn-danger" (click)="removeQuestionFromList(index)">
+                    <fa name="times"></fa>
+                </button>
+            </li>
+            <ul class="list-group" *ngFor="let option of question.options let optionNumber=index">
+                <li class="list-group-item list-group-item-info"><strong>option{{optionNumber+1}} : {{option}}</strong></li>
+            </ul>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<!--<div class="modal fade" id="messages">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{messages}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>-->

@@ -1,0 +1,26 @@
+$marginVar:10px;
+$background-color:#d9edf7;
+.btn-outline-primary {
+    float: right;
+    margin-left: $marginVar;
+}
+
+.btn-primary {
+    float: right;
+    margin-left: $marginVar;
+}
+
+.card-outline-primary {
+    margin: 20px;
+}
+
+h2 {
+    margin: 20px;
+}
+
+// .card-header {
+//     background-color: $background-color;
+// }
+// .card-footer {
+//     background-color: $background-color;
+// }

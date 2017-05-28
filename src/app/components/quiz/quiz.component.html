@@ -1,0 +1,102 @@
+<div class="row justify-content-center" *ngIf="disableButtonToContinue">
+    <div class="alert alert-danger col-md-2">
+        <strong>Time Remaining -- {{timerMinCounter|number:'2.0-0'}}:{{timerSecCounter|number:'2.0-0'}}</strong>
+    </div>
+</div>
+<hr>
+
+<div class="row" *ngIf="disableButtonToContinue">
+    <div class="col-md-10">
+        <div class="card card-outline-info">
+            <div class="card-header">
+                Question : #{{index+1}}
+            </div>
+            <div class="card-block">
+                <div class="card-text">
+                    {{questionName}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="disableButtonToContinue">
+    <div class="col-md-5">
+        <div class="card card-outline-info leftButton  ">
+            <div role="button" class="card-block" (click)="onClickOfSubmitButton(0)">
+                {{option1}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card card-outline-info rightButton">
+            <div role="button" class="card-block" (click)="onClickOfSubmitButton(1)">
+                {{option2}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="disableButtonToContinue">
+    <div class="col-md-5">
+        <div class="card card-outline-info leftButton ">
+            <div role="button" class="card-block" (click)="onClickOfSubmitButton(2)">
+                {{option3}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card card-outline-info rightButton ">
+            <div role="button" class="card-block" (click)="onClickOfSubmitButton(3)">
+                {{option4}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myupdate" *ngIf="!disableButtonToContinue">Check scores!!</button>-->
+
+<!--<div class="modal fade" id="myupdate" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Congratulations!!</h4>
+            </div>
+            <div class="modal-body">
+                <p>You have scored : {{pointsObtained}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="logout()">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+<div class="scoreSheet" *ngIf="!disableButtonToContinue">
+    <!--<div class="alert alert-info col-md-5">
+        <strong>Your score is {{pointsObtained}}</strong>
+    </div>-->
+    <div class="card card-outline-primary">
+        <div class="card-header">
+            {{performanceText}}
+        </div>
+        <div class="card-block">
+            <div class="card-text">
+                Your score in the test : <strong>{{testName}}</strong> is <strong>{{pointsObtained}}</strong>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button role="button" type="button" class="btn btn-primary" (click)="getQuestionsList()">
+                Check details.
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row ameena" *ngIf="!disableButtonToContinue ">
+    <ul class="list-group " *ngFor="let question of questionsList ">
+        <li class="list-group-item list-group-item-success" *ngIf="question.isCorrect " [title]="question.questionName">{{question.questionName}}</li>
+        <li class="list-group-item list-group-item-danger " *ngIf="!question.isCorrect " [title]="question.questionName">{{question.questionName}}</li>
+        <hr>
+    </ul>
+</div>

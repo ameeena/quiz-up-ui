@@ -1,0 +1,148 @@
+<div class="row">
+    <div class="col-md-6">
+        <div *ngIf="chartData" class="jumbotron">
+            <h4 class="display-4">Tests Scores</h4>
+            <canvas baseChart [data]="chartData" [labels]="chartLabels" [options]="chartOptions" [colors]="chartColors" [legend]="chartLegend" [chartType]="chartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+            </canvas>
+            <div class="jumbotron">
+                <pagination [totalItems]="totalItems" [(ngModel)]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="pageChanged($event)"></pagination>
+            </div>
+        </div>
+        <div *ngIf="!chartData">
+            You have not taken any test. Take a test!!
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <div>
+                        <button type="button" role="button" class="btn btn-outline-primary userScores">{{totalTests}}</button>
+                        <span style="padding: 20px;">Total Tests</span>
+                    </div>
+                    <hr>
+                    <div>
+                        <button type="button" role="button" class="btn btn-outline-primary userScores">{{testsTaken}}</button>
+                        <span style="padding: 20px;">Tests Taken</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <div>
+                        <button type="button" role="button" class="btn btn-outline-primary userScores">{{avgScore | number:'1.0-2'}}</button>
+                        <span style="padding: 20px;">Average Score</span>
+                    </div>
+                    <hr>
+                    <div>
+                        <button type="button" role="button" class="btn btn-outline-primary userScores">{{highScore}}</button>
+                        <span style="padding: 20px;">Highest Score</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                </div>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class="col-md-12 lead">
+                <div class="jumbotron">
+                    <div style="margin-bottom: 20px;">Recommended reading</div>
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#desktopApp" aria-expanded="true" aria-controls="desktopApp">
+                                    Desktop Applications
+                                </a>
+                            </div>
+                            <div id="desktopApp" class="collapse hide" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-block">
+                                    <div *ngFor="let individualMaterial of listOfDesktopApp">
+                                        <a [href]="individualMaterial.link" target="_blank">{{individualMaterial.displayName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#webApp" aria-expanded="true" aria-controls="webApp">
+                                    Web Applications
+                                </a>
+                            </div>
+                            <div id="webApp" class="collapse hide" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-block">
+                                    <div *ngFor="let individualMaterial of listOfWebAppLinks">
+                                        <a [href]="individualMaterial.link" target="_blank">{{individualMaterial.displayName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#embeddedApp" aria-expanded="true" aria-controls="embeddedApp">
+                                    Embedded Applications
+                                </a>
+                            </div>
+                            <div id="embeddedApp" class="collapse hide" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-block">
+                                    <div *ngFor="let individualMaterial of listOfEmbeddedLinks">
+                                        <a [href]="individualMaterial.link">{{individualMaterial.displayName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#plcApp" aria-expanded="true" aria-controls="plcApp">
+                                    PLC Applications
+                                </a>
+                            </div>
+                            <div id="plcApp" class="collapse hide" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="card-block">
+                                    <div *ngFor="let individualMaterial of listOfPlcLinks">
+                                        <a [href]="individualMaterial.link" target="_blank">{{individualMaterial.displayName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#infoMissiles" aria-expanded="true" aria-controls="infoMissiles">
+                                    Info Missiles
+                                </a>
+                            </div>
+                            <div id="infoMissiles" class="collapse hide" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="card-block">
+                                    <div *ngFor="let individualMaterial of listOfInfoMissiles">
+                                        <a [href]="individualMaterial.link" target="_blank">{{individualMaterial.displayName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#random" aria-expanded="true" aria-controls="random">
+                                    Random
+                                </a>
+                            </div>
+                            <div id="random" class="collapse hide" role="tabpanel" aria-labelledby="headinSix">
+                                <div class="card-block">
+                                    <div *ngFor="let individualMaterial of listOfRandomStuff">
+                                        <a [href]="individualMaterial.link" target="_blank">{{individualMaterial.displayName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

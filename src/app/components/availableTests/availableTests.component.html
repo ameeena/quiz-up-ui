@@ -1,0 +1,33 @@
+<div *ngIf="isAvailbleTests">
+    <h2 class="display-4"> List of available tests </h2>
+
+    <div *ngFor="let tests of listOfAvailableTestsResult">
+        <div class="card card-outline-primary">
+            <div class="card-header">
+                {{tests.domain}}
+            </div>
+            <div class="card-block">
+                <div class="card-text text-primary">
+                    {{tests.testName}}
+                </div>
+                <div class="card-text">
+                    {{tests.description}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button role="button" type="button" (click)="takeTest(tests._id)" class="btn btn-primary ">
+                Take test
+            </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="!isAvailbleTests">
+    <div class="card card-success">
+        <div class="card card-block">
+            There are no Tests Available. Please wait for sometime!! We will update neww tests shortly..
+        </div>
+    </div>
+</div>

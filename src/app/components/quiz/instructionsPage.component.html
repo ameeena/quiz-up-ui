@@ -1,0 +1,27 @@
+<!--We'll have a start button for taking test, after which the timer will start and the quiz begins. -->
+<!--we have to specify the rules for taking the test-->
+
+<!--Test should be taken here-->
+
+<div class="container-fluid takeTestCardContainer">
+    <div class="row">
+        <div class="offset-xs-2 col-xs-8">
+            <div class="card card-outline-success text-xs-center">
+                <h3 class="card-header"> Take test </h3>
+                <div class="card-block">
+                    <h4 class="card-title">
+                        Instructions
+                    </h4>
+                    <div class="card-text">The test consists of 25 questions.</div>
+                    <div class="card-text"> Total time give per question is 1 min.</div>
+                    <div class="card-text"> timer is of 25 min.</div>
+                    <div class="card-text">Click on the below button to start the question.</div>
+                    <br/>
+                    <button type="button" class="btn btn-primary" (click)="startTest()">
+                     Start test
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

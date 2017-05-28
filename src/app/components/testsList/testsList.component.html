@@ -1,0 +1,21 @@
+<div class="mainDiv">
+    <h4 class="display-4">List of all tests.</h4>
+    <div class="alert alert-danger" *ngIf="isError"><strong>{{errorMessage}}</strong></div>
+    <div class="alert alert-success" *ngIf="isSuccess"><strong>{{successMessage}}</strong></div>
+    <table class="table table-bordered table-info">
+        <thead>
+            <tr>
+                <th>Tests Name</th>
+                <th>Domain</th>
+                <th>Delete Tests</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tests of testsList">
+                <td>{{tests.testName}}</td>
+                <td>{{tests.domain}}</td>
+                <td> <button type="button" class="btn btn-danger" role="button" (click)=deleteTest(tests._id)>Delete Test</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

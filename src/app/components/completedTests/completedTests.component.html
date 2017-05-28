@@ -1,0 +1,37 @@
+<div *ngIf="isTestsTaken">
+    <h2 class="display-4"> List of completed tests </h2>
+
+    <div *ngFor="let tests of listOfTestsTaken">
+        <div class="card card-outline-primary">
+            <div class="card-header">
+                {{tests.domainName}}
+            </div>
+            <div class="card-block">
+                <div class="card-text">
+                    {{tests.testName}}
+                </div>
+                <div class="card-text">
+                    {{tests.description}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button role="button" type="button" class="btn btn-primary" (click)="getQuestionsList(tests.testId)">
+                Check details.
+            </button>
+                <button type="button" class="btn btn-outline-primary">
+                Scored Result : {{tests.testScore}}
+            </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div *ngIf="!isTestsTaken">
+    <div class="card card-success">
+        <div class="card card-block">
+            You have not taken your tests yet. Please check tests available.
+        </div>
+    </div>
+</div>

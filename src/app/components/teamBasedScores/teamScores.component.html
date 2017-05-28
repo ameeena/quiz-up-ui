@@ -1,0 +1,28 @@
+<div class="mainDiv">
+    <h4 class="display-4"> Teams List </h4>
+    <!--<div class="alert alert-danger" *ngIf="isError"><strong>{{errorMessage}}</strong></div>
+    <div class="alert alert-success" *ngIf="isSuccess"><strong>{{successMessage}}</strong></div>-->
+    <table class="table table-bordered table-info">
+        <thead>
+            <tr>
+                <th>Team name</th>
+                <th>Team Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let teams of listOfTeamsAndTeamScores let index=index">
+                <td *ngIf="index==0" class="alert-success">{{teams.teamName}}</td>
+                <td *ngIf="index==0" class="alert-success">{{teams.teamScore}}</td>
+
+                <td *ngIf="index==1" class="alert-warning">{{teams.teamName}}</td>
+                <td *ngIf="index==1" class="alert-warning">{{teams.teamScore}}</td>
+
+                <td *ngIf="index==2" class="alert-danger">{{teams.teamName}}</td>
+                <td *ngIf="index==2" class="alert-danger">{{teams.teamScore}}</td>
+
+                <td *ngIf="index>2">{{teams.teamName}}</td>
+                <td *ngIf="index>2">{{teams.teamScore}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,65 @@
+    /*.containerClassLeft {
+    float: left;
+}
+
+.containerClassRight {
+    float: right;
+}*/
+    
+    $margin-left-right:10px;
+    .containerElement {
+        flex-direction: row;
+    }
+    
+    .navBarData {
+        background-color: #006699;
+        //height: 50px;
+    }
+    
+    .dropdown-menu {
+        background-color: #006699;
+        color: white;
+        border-top: none;
+        margin-top: 0px;
+    }
+    
+    ul {
+        display: flex;
+    }
+    
+    li {
+        flex: 0 0 auto;
+    }
+    
+    // li:nth-child(1) {
+    //     margin-right: auto;
+    // }
+    a {
+        color: white;
+    }
+    
+    .firstElement {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    
+    .nav-link {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-left: $margin-left-right;
+        margin-right: $margin-left-right;
+    }
+    
+    .container-fluid {
+        padding: 0px;
+    }
+    
+    // router-outlet {
+    //     background-image: url('../../styles/Quizup.png');
+    //     background-size: cover;
+    // }
+    /*
+.navbar-nav {
+    flex: 1 0 auto;
+    display: flex;
+}*/
