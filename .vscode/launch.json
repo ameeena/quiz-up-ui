@@ -1,7 +1,20 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "edge",
+            "request": "launch",
+            "name": "Launch Edge",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "type": "edge",
+            "request": "attach",
+            "name": "Attach Edge",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}"
+        },
         {
             "type": "chrome",
             "request": "launch",
@@ -13,7 +26,7 @@
             "type": "chrome",
             "request": "attach",
             "name": "Chrome Attach",
-            "port": 4200,
+            "port": 9222,
             "webRoot": "${workspaceRoot}"
         }
     ]
