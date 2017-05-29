@@ -15,7 +15,7 @@ import { DomainModel } from '../Model/domains.model';
 })
 export class ActualQuizComponent implements OnInit {
 
-  testId: string = "5921ea8cf8d47a08303c1738";
+  testId: string = "592b3ec4d7fe8913a4eee690";
   quizData: Quiz;
   quizDuration: number;
   currentQuestionIndex: number = 0;
