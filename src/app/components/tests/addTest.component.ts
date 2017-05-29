@@ -54,7 +54,7 @@ export class AddTestComponent implements OnInit{
   addQuestion(event:any){
       event.preventDefault();
       var newQuestion:any={
-          questionName:this.question,
+          value:this.question,
           options:[this.option1,this.option2,this.option3,this.option4],
           correctOptionIndex:this.correctAnswerIndex
       }         

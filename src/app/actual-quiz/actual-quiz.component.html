@@ -1,5 +1,4 @@
 <section class="content-page">
-  <pre>{{ quizData | json }}</pre>
   <h2 class="title" *ngIf="quizData">{{quizData.name}}</h2>
   <h6 class="tag-line" *ngIf="quizData">{{quizData.domain}}</h6>
   <section class="quiz-timer">
@@ -10,7 +9,6 @@
   </section>
   <section class="perepheral-options">
     <button *ngIf="currentQuestionIndex != 0">Go Back</button>
-    <button>Submit</button>
     <button>Skip Ahead</button>
   </section>
 </section>
