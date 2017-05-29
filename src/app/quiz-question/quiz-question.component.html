@@ -1,3 +1,9 @@
-<p>
-  quiz-question works!
-</p>
+<section class="quiz-question">
+  <section class="question-wrapper">
+    <section class="question-text">{{attempt.question.value}}</section>
+    <section class="options">
+      <div class="option" *ngFor="let option of attempt.question.options">{{option}}</div>
+    </section>
+  </section>
+  <button>submit</button>
+</section>

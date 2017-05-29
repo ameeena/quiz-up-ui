@@ -8,14 +8,14 @@ import { AttemptedQuestion } from "../Model/questions.model";
 })
 export class QuizQuestionComponent implements OnInit {
 
-  _question : AttemptedQuestion;
+  attempt : AttemptedQuestion;
 
   @Input()
   set question(question : AttemptedQuestion) {
-    this._question = question;
+    this.attempt = question;
   }
   get question() {
-    return this._question;
+    return this.attempt;
   }
 
   @Input() usage : string;
