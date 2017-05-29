@@ -7,6 +7,9 @@
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]" routerLinkActive="active">Hello {{username}}</a>
 
         </li>
+        <li class="nav-item">
+            <a href="" class="nav-link" [routerLink]="['/actualQuiz/0']">Go</a>
+        </li>
         <!--<li class="nav-item"><a class="nav-link" [routerLink]="[ '/registrationAndLogin'] " routerLinkActive="active"> Register </a></li>-->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration</a>
