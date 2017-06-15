@@ -8,23 +8,45 @@ import { AttemptedQuestion } from "../Model/questions.model";
 })
 export class QuizQuestionComponent implements OnInit {
 
-  attempt : AttemptedQuestion;
+  attempt = new AttemptedQuestion();
+  exit = false;
 
   @Input()
-  set question(question : AttemptedQuestion) {
-    this.attempt = question;
+  set question(question: AttemptedQuestion) {
+    if (question) {
+      this.exit = false;
+      this.attempt = question
+    }
   }
   get question() {
     return this.attempt;
   }
 
-  @Input() usage : string;
+  @Input() usage: string;
 
   @Output() questionAttempted = new EventEmitter<AttemptedQuestion>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isSelected(currentIndex: number) {
+    return this.attempt.answerIndex === currentIndex;
+  }
+
+  selectOption(selectedIndex: number) {
+    this.attempt.answerIndex = selectedIndex;
+  }
+
+  beginSubmission() {
+    this.exit = true;
+  }
+
+  submit(event : Event) {
+    if (!event.srcElement.className.includes('option')) {
+      this.questionAttempted.emit(this.attempt);
+    }
   }
 
 }

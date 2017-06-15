@@ -26,7 +26,7 @@
             "type": "chrome",
             "request": "attach",
             "name": "Chrome Attach",
-            "port": 9222,
+            "port": 4200,
             "webRoot": "${workspaceRoot}"
         }
     ]

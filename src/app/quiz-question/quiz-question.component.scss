@@ -18,8 +18,12 @@
     text-align: center;
     margin: 10px;
     border: 1px solid black;
+    color: #006699;
+    background-color: rgb(247, 247, 249);
+    border-top-left-radius: 20%;
     border-bottom-left-radius: 40%;
     border-top-right-radius: 40%;
+    border-bottom-right-radius: 20%;
 }
 
 .options {
@@ -37,7 +41,16 @@
     transition: transform 0.25s linear;
 }
 
-.option:hover {
+.quiz-question.exit {
+    opacity: 0;
+    transition: opacity 0.75s ease-out;
+}
+
+.option.selected {
+    background-color: orange;
+}
+
+.option:hover:not(.selected) {
     color: white;
     background-color: gray;
     cursor: pointer;

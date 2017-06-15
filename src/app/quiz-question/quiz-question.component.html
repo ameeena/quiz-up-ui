@@ -1,9 +1,10 @@
-<section class="quiz-question">
+<section class="quiz-question" [ngClass]="{ 'exit' : exit }" (transitionend)="submit($event)">
   <section class="question-wrapper">
     <section class="question-text">{{attempt.question.value}}</section>
     <section class="options">
-      <div class="option" *ngFor="let option of attempt.question.options">{{option}}</div>
+      <div class="option" [ngClass]="{ 'selected' : isSelected(i) }" 
+      *ngFor="let option of attempt.question.options; let i = index;" (click)="selectOption(i)">{{option}}</div>
     </section>
   </section>
-  <button>submit</button>
+  <button (click)="beginSubmission()">submit</button>
 </section>

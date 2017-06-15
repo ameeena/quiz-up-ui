@@ -18,6 +18,10 @@ export class QuizQuestion {
 export class AttemptedQuestion {
   question: QuizQuestion;
   answerIndex: number;
+
+  constructor() {
+    this.question = new QuizQuestion();
+  }
 }
 
 export class QuestionFromUser {
