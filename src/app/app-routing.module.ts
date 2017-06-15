@@ -18,10 +18,12 @@ import { UploadReadingMaterialComponent } from './components/uploadReadingMateri
 import { TeamScoresComponent } from './components/teamBasedScores/teamScores.component';
 import { LoginComponent } from './login/login.component';
 import { ActualQuizComponent } from './actual-quiz/actual-quiz.component';
+import { QuizInstructionsComponent } from "./quiz-instructions/quiz-instructions.component";
 
 const appRoutes: Routes = [
     { path: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
+    { path: 'beginQuiz/:quizId', component: QuizInstructionsComponent },
     { path: 'actualQuiz/:quizId', component: ActualQuizComponent },
     // {path:'questionsList',component:QuestionsListComponent},
     {

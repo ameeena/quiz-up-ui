@@ -36,6 +36,7 @@ import { LoginComponent } from './login/login.component';
 import { ActualQuizComponent } from './actual-quiz/actual-quiz.component';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { QuizInstructionsComponent } from './quiz-instructions/quiz-instructions.component';
 
 @NgModule({
   imports: [
@@ -68,7 +69,7 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     UploadReadingMaterialComponent,
     TeamScoresComponent,    
     PageNotFoundComponent, 
-    QuestionComponent, LoginComponent, ActualQuizComponent, QuizQuestionComponent, CountdownTimerComponent   
+    QuestionComponent, LoginComponent, ActualQuizComponent, QuizQuestionComponent, CountdownTimerComponent, QuizInstructionsComponent   
   ],
   bootstrap:[AppComponent],
   providers: [SimpleTimer]

@@ -1,40 +1,44 @@
-<nav role="navigation" class="navbar fixed-top container-fluid">
-    <ul class="nav containerElement">
-        <li class="nav-item">
-            <a class="nav-link navbar-brand firstElement" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]" routerLinkActive="active">QuizUp</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]" routerLinkActive="active">Hello {{username}}</a>
+<section class="home-page">
+    <nav role="navigation" class="navbar fixed-top container-fluid">
+        <ul class="nav containerElement">
+            <li class="nav-item">
+                <a class="nav-link navbar-brand firstElement" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]" routerLinkActive="active">QuizUp</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]"
+                    routerLinkActive="active">Hello {{username}}</a>
 
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link" [routerLink]="['/actualQuiz/0']">Go</a>
-        </li>
-        <!--<li class="nav-item"><a class="nav-link" [routerLink]="[ '/registrationAndLogin'] " routerLinkActive="active"> Register </a></li>-->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['tests'] }}]" routerLinkActive="active">Add Test</a>
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['testsList'] }}]" routerLinkActive="active ">Tests List</a>
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['usersList'] }}]" routerLinkActive="active">Users List</a>
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['uploadReadingMaterialLinks'] }}]" routerLinkActive="active">Add Reading Material</a>
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['teamBasedScores'] }}]" routerLinkActive="active">Team Scores</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tests</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['availableTests'] }}]" routerLinkActive="active">Available Tests</a>
-                <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['completedTests'] }}]" routerLinkActive="active">Completed Tests</a>
-            </div>
-        </li>
-        <!--<li class="nav-item"><a class="nav-link" [routerLink]=" [ '/admin']" routerLinkActive="active ">Admin</a></li>-->
-        <!--<li class="nav-item"><a class="nav-link" [routerLink]="['/home',{outlets: {'router1':['instructionsPage'] }}]" routerLinkActive="active">Take test</a></li>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link" [routerLink]="['/beginQuiz/0']">Go</a>
+            </li>
+            <!--<li class="nav-item"><a class="nav-link" [routerLink]="[ '/registrationAndLogin'] " routerLinkActive="active"> Register </a></li>-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['tests'] }}]" routerLinkActive="active">Add Test</a>
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['testsList'] }}]" routerLinkActive="active ">Tests List</a>
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['usersList'] }}]" routerLinkActive="active">Users List</a>
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['uploadReadingMaterialLinks'] }}]" routerLinkActive="active">Add Reading Material</a>
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['teamBasedScores'] }}]" routerLinkActive="active">Team Scores</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tests</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['availableTests'] }}]" routerLinkActive="active">Available Tests</a>
+                    <a class="dropdown-item" [routerLink]="['/home',{outlets: {'router1':['completedTests'] }}]" routerLinkActive="active">Completed Tests</a>
+                </div>
+            </li>
+            <!--<li class="nav-item"><a class="nav-link" [routerLink]=" [ '/admin']" routerLinkActive="active ">Admin</a></li>-->
+            <!--<li class="nav-item"><a class="nav-link" [routerLink]="['/home',{outlets: {'router1':['instructionsPage'] }}]" routerLinkActive="active">Take test</a></li>
         <li class="nav=item"><a class="nav-link" [routerLink]="['/home',{outlets: {'router1':['welcome'] }}]" routerLinkActive="active">Welcome I guess</a></li>-->
-        <li class="nav-item"><a class="nav-link" (click)="logout()" [routerLink]="['']" routerLinkActive="active ">Logout</a></li>
+            <li class="nav-item"><a class="nav-link" (click)="logout()" [routerLink]="['']" routerLinkActive="active ">Logout</a></li>
 
-    </ul>
-</nav>
-<div class="container-fluid" style="margin-bottom:70px;margin-top:70px;">
-    <router-outlet name="router1"></router-outlet>
-</div>
+        </ul>
+    </nav>
+    <div class="home-content" style="margin-bottom:70px;margin-top:70px;">
+        <router-outlet name="router1"></router-outlet>
+    </div>
+    <footer></footer>
+</section>
