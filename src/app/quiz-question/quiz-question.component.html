@@ -2,9 +2,11 @@
   <section class="question-wrapper">
     <section class="question-text">{{attempt.question.value}}</section>
     <section class="options">
-      <div class="option" [ngClass]="{ 'selected' : isSelected(i) }" 
-      *ngFor="let option of attempt.question.options; let i = index;" (click)="selectOption(i)">{{option}}</div>
+      <div class="option" [ngClass]="{ 'selected' : isSelected(i) }" *ngFor="let option of attempt.question.options; let i = index;"
+        (click)="selectOption(i)">{{option}}</div>
     </section>
   </section>
-  <button (click)="beginSubmission()">submit</button>
+  <div class="submission-container">
+    <button (click)="beginSubmission()" *ngIf="optionSelected()" class="btn btn-primary">submit</button>
+  </div>
 </section>

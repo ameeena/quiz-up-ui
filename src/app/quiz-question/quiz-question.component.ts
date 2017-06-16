@@ -13,9 +13,10 @@ export class QuizQuestionComponent implements OnInit {
 
   @Input()
   set question(question: AttemptedQuestion) {
-    if (question) {
+    if (question && question.question && question.question.options) {
       this.exit = false;
       this.attempt = question
+      this.attempt.answerIndex = undefined;
     }
   }
   get question() {
@@ -36,15 +37,19 @@ export class QuizQuestionComponent implements OnInit {
   }
 
   selectOption(selectedIndex: number) {
-    this.attempt.answerIndex = selectedIndex;
+    this.attempt.answerIndex = this.attempt.answerIndex === selectedIndex ? undefined : selectedIndex;
+  }
+
+  optionSelected() {
+    return this.attempt.answerIndex !== undefined;
   }
 
   beginSubmission() {
     this.exit = true;
   }
 
-  submit(event : Event) {
-    if (!event.srcElement.className.includes('option')) {
+  submit(event: Event) {
+    if (event.srcElement.className.includes('quiz-question')) {
       this.questionAttempted.emit(this.attempt);
     }
   }

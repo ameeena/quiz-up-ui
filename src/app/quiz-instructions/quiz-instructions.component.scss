@@ -1,6 +1,10 @@
-.quiz-instructions-page {
-    min-height: 100%;
+.quiz-instructions-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.instruction-card {
+    border: 1px solid #555555;
+    border-radius: 5px;
 }

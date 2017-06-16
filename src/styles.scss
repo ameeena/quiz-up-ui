@@ -40,15 +40,16 @@ my-app {
 //     /*don't grow or shrink - just stay at a height of 90px.*/
 // }
 footer {
-    position: fixed;
     height: 4vh;
     background-color: $footer-color;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-bottom: 0px;
 }
 
 .mainDiv {
     margin: 20px;
+}
+
+.content-page {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
 }

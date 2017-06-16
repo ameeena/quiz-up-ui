@@ -1,11 +1,13 @@
 .home-page {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .home-content {
-   flex: 1; 
+   flex: 1;
+   position: relative;
 }
 
 /*.containerClassLeft {
@@ -21,8 +23,9 @@ $margin-left-right:10px;
     flex-direction: row;
 }
 
-.navbar {
+.home-menu {
     background-color: #006699;
+    padding: 0;
 }
 
 .dropdown-menu {
@@ -55,8 +58,8 @@ a {
 }
 
 .nav-link {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding: 13px 0;
+    line-height: 1;
     margin-left: $margin-left-right;
     margin-right: $margin-left-right;
 }

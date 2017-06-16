@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 1;
+    transition: opacity 0.75s ease-out;    
+}
+
+.quiz-question.exit {
+    opacity: 0;
 }
 
 .question-wrapper {
@@ -41,18 +47,28 @@
     transition: transform 0.25s linear;
 }
 
-.quiz-question.exit {
-    opacity: 0;
-    transition: opacity 0.75s ease-out;
+.option.selected {
+    background-color: #ff9933;
+    border: 1px solid #ff9933;
+    color: white;
 }
 
-.option.selected {
-    background-color: orange;
+.option.selected:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff9933;    
 }
 
 .option:hover:not(.selected) {
     color: white;
-    background-color: gray;
+    background-color: #9ecaed;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
     cursor: pointer;
-    transform: scale(1.1, 1.1);
+}
+
+.submission-container {
+    min-height: 10vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }

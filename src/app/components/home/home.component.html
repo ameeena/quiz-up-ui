@@ -1,5 +1,5 @@
 <section class="home-page">
-    <nav role="navigation" class="navbar fixed-top container-fluid">
+    <nav role="navigation" class="navbar home-menu">
         <ul class="nav containerElement">
             <li class="nav-item">
                 <a class="nav-link navbar-brand firstElement" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]" routerLinkActive="active">QuizUp</a>
@@ -10,7 +10,7 @@
 
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link" [routerLink]="['/beginQuiz/0']">Go</a>
+                <a href="" class="nav-link" [routerLink]="['beginQuiz/0']">Go</a>
             </li>
             <!--<li class="nav-item"><a class="nav-link" [routerLink]="[ '/registrationAndLogin'] " routerLinkActive="active"> Register </a></li>-->
             <li class="nav-item dropdown">
@@ -37,8 +37,8 @@
 
         </ul>
     </nav>
-    <div class="home-content" style="margin-bottom:70px;margin-top:70px;">
-        <router-outlet name="router1"></router-outlet>
-    </div>
+    <section class="home-content">
+        <router-outlet></router-outlet>
+    </section>
     <footer></footer>
 </section>

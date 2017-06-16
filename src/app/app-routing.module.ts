@@ -23,26 +23,25 @@ import { QuizInstructionsComponent } from "./quiz-instructions/quiz-instructions
 const appRoutes: Routes = [
     { path: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'beginQuiz/:quizId', component: QuizInstructionsComponent },
-    { path: 'actualQuiz/:quizId', component: ActualQuizComponent },
-    // {path:'questionsList',component:QuestionsListComponent},
     {
         path: 'home',
         component: HomeComponent,
         children: [
-            { path: 'dashboard', component: WelcomePageComponent, outlet: 'router1', pathMatch: 'full' },
-            { path: 'questionsList', component: QuestionsListComponent, outlet: 'router1' },
-            { path: 'usersList', component: UsersListComponent, outlet: 'router1' },
-            { path: 'quiz/:id', component: QuizComponent, outlet: 'router1' },
-            { path: 'instructionsPage/:id', component: InstructionsPageComponent, outlet: 'router1' },
-            { path: 'tests', component: AddTestComponent, outlet: 'router1' },
-            { path: 'registrationAndLogin', component: RegistrationAndLoginComponent, outlet: 'router1' },
-            { path: 'availableTests', component: AvailableTestsComponent, outlet: 'router1' },
-            { path: 'completedTests', component: CompletedTestsComponent, outlet: 'router1' },
-            { path: 'questionsList/:id', component: QuestionsListComponent, outlet: 'router1' },
-            { path: 'testsList', component: TestsListComponent, outlet: 'router1' },
-            { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent, outlet: 'router1' },
-            { path: 'teamBasedScores', component: TeamScoresComponent, outlet: 'router1' }
+            { path: '', component: WelcomePageComponent },
+            { path: 'beginQuiz/:quizId', component: QuizInstructionsComponent },
+            { path: 'actualQuiz/:quizId', component: ActualQuizComponent },
+            { path: 'questionsList', component: QuestionsListComponent },
+            { path: 'usersList', component: UsersListComponent },
+            { path: 'quiz/:id', component: QuizComponent },
+            { path: 'instructionsPage/:id', component: InstructionsPageComponent },
+            { path: 'tests', component: AddTestComponent },
+            { path: 'registrationAndLogin', component: RegistrationAndLoginComponent },
+            { path: 'availableTests', component: AvailableTestsComponent },
+            { path: 'completedTests', component: CompletedTestsComponent },
+            { path: 'questionsList/:id', component: QuestionsListComponent },
+            { path: 'testsList', component: TestsListComponent },
+            { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent },
+            { path: 'teamBasedScores', component: TeamScoresComponent }
         ]
     },
     { path: '**', component: PageNotFoundComponent }
@@ -53,6 +52,4 @@ const appRoutes: Routes = [
     imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
     exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule { }

@@ -13,6 +13,10 @@ export class QuizQuestion {
   value: string;
   options: string[];
   correctOptionIndex: number;
+
+  constructor() {
+    this.options = [];
+  }
 }
 
 export class AttemptedQuestion {
