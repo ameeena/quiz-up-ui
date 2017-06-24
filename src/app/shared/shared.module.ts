@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { QuizQuestionComponent } from './quiz-question/quiz-question.component';
 import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     QuizQuestionComponent,
@@ -13,6 +17,8 @@ import { TimerComponent } from './timer/timer.component';
   ],
   exports: [
     CommonModule,
+    FormsModule,
+    AngularFontAwesomeModule,
     QuizQuestionComponent,
     TimerComponent
   ]

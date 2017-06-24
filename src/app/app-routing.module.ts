@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.component';
-import { AddTestComponent } from './components/tests/addTest.component';
-import { QuestionsListComponent } from './components/questionsList/questionsList.component';
-import { QuizComponent } from './components/quiz/quiz.component';
-import { InstructionsPageComponent } from './components/quiz/instructionsPage.component';
-import { WelcomePageComponent } from './components/quizUp/welcomePage.component';
-import { RegistrationAndLoginComponent } from './components/registration/registrationAndLogin.component';
-import { UsersListComponent } from './components/usersList/usersList.component';
-import { HomeComponent } from './components/home/home.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { AvailableTestsComponent } from './components/availableTests/availableTests.component';
-import { CompletedTestsComponent } from './components/completedTests/completedTests.component';
-import { TestsListComponent } from './components/testsList/testsList.component';
-import { UploadReadingMaterialComponent } from './components/uploadReadingMaterialLinks/uploadReadingMaterialLinks.component';
-import { TeamScoresComponent } from './components/teamBasedScores/teamScores.component';
-import { LoginComponent } from './login/login.component';
-import { ActualQuizComponent } from './actual-quiz/actual-quiz.component';
-import { QuizInstructionsComponent } from "./quiz-instructions/quiz-instructions.component";
+import { LoginComponent } from './core/login/login.component';
+import { HomeComponent } from './core/home/home.component';
+import { PageNotFoundComponent } from './core/pageNotFound/pageNotFound.component';
+import { DashboardComponent } from "./core/dashboard/dashboard.component";
+
+import { AvailableTestsComponent } from './quiz/availableTests/availableTests.component';
+import { CompletedTestsComponent } from './quiz/completedTests/completedTests.component';
+import { QuizInstructionsComponent } from "./quiz/quiz-instructions/quiz-instructions.component";
+import { ActualQuizComponent } from './quiz/actual-quiz/actual-quiz.component';
+import { QuestionsListComponent } from './quiz/questionsList/questionsList.component';
+import { TeamScoresComponent } from './quiz/teamBasedScores/teamScores.component';
+
+import { AddTestComponent } from './admin/addTests/addTest.component';
+import { UsersListComponent } from './admin/usersList/usersList.component';
+import { TestsListComponent } from './admin/testsList/testsList.component';
+import { UploadReadingMaterialComponent } from './admin/uploadReadingMaterialLinks/uploadReadingMaterialLinks.component';
 
 const appRoutes: Routes = [
     { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -27,21 +25,17 @@ const appRoutes: Routes = [
         path: 'home',
         component: HomeComponent,
         children: [
-            { path: '', component: WelcomePageComponent },
+            { path: '', component: DashboardComponent },
+            { path: 'availableTests', component: AvailableTestsComponent },
+            { path: 'completedTests', component: CompletedTestsComponent },                        
             { path: 'beginQuiz/:quizId', component: QuizInstructionsComponent },
             { path: 'actualQuiz/:quizId', component: ActualQuizComponent },
-            { path: 'questionsList', component: QuestionsListComponent },
-            { path: 'usersList', component: UsersListComponent },
-            { path: 'quiz/:id', component: QuizComponent },
-            { path: 'instructionsPage/:id', component: InstructionsPageComponent },
-            { path: 'tests', component: AddTestComponent },
-            { path: 'registrationAndLogin', component: RegistrationAndLoginComponent },
-            { path: 'availableTests', component: AvailableTestsComponent },
-            { path: 'completedTests', component: CompletedTestsComponent },
             { path: 'questionsList/:id', component: QuestionsListComponent },
-            { path: 'testsList', component: TestsListComponent },
-            { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent },
-            { path: 'teamBasedScores', component: TeamScoresComponent }
+            { path: 'teamBasedScores', component: TeamScoresComponent },  
+            { path: 'createTest', component: AddTestComponent },                      
+            { path: 'usersList', component: UsersListComponent },
+            { path: 'testsList', component: TestsListComponent },            
+            { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent }
         ]
     },
     { path: '**', component: PageNotFoundComponent }
@@ -53,3 +47,11 @@ const appRoutes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export const routedComponents = 
+    [
+        LoginComponent,
+        HomeComponent,
+        PageNotFoundComponent,
+        DashboardComponent
+    ];
