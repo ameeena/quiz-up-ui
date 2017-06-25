@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http'
-import { FormsModule } from '@angular/forms'
-import { RouterModule, Routes } from '@angular/router'
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaginationModule } from 'ng2-bootstrap/Pagination';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
@@ -12,8 +12,8 @@ import { SimpleTimer } from 'ng2-simple-timer';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 
-import { QuizModule } from "./quiz/quiz.module";
-import { AdminModule } from "./admin/admin.module";
+import { QuizModule } from './quiz/quiz.module';
+import { AdminModule } from './admin/admin.module';
 
 
 import { QuestionService } from './core/services/question.service';

@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './core/login/login.component';
 import { HomeComponent } from './core/home/home.component';
 import { PageNotFoundComponent } from './core/pageNotFound/pageNotFound.component';
-import { DashboardComponent } from "./core/dashboard/dashboard.component";
+import { DashboardComponent } from './core/dashboard/dashboard.component';
 
 import { AvailableTestsComponent } from './quiz/availableTests/availableTests.component';
 import { CompletedTestsComponent } from './quiz/completedTests/completedTests.component';
-import { QuizInstructionsComponent } from "./quiz/quiz-instructions/quiz-instructions.component";
+import { QuizInstructionsComponent } from './quiz/quiz-instructions/quiz-instructions.component';
 import { ActualQuizComponent } from './quiz/actual-quiz/actual-quiz.component';
 import { QuestionsListComponent } from './quiz/questionsList/questionsList.component';
 import { TeamScoresComponent } from './quiz/teamBasedScores/teamScores.component';
