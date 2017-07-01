@@ -18,9 +18,6 @@ export class TeamScoresComponent implements OnInit {
 
     }
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
         this.teamService.getTeamScores().subscribe((res) => {
             this.listOfTeamsAndTeamScores = res;
         });

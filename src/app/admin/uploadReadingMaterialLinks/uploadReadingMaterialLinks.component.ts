@@ -40,8 +40,6 @@ export class UploadReadingMaterialComponent implements OnInit {
         })
     }
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
+       
     }
 }

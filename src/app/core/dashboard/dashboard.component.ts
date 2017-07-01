@@ -136,9 +136,7 @@ export class DashboardComponent implements OnInit {
         });
     }
     ngOnInit() {
-        if (!this.userSerive.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
+        
         //get user details of the test.
         this.userSerive.getUserTestsList().subscribe((results) => {
             this.userDetails = results;

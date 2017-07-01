@@ -46,9 +46,7 @@ export class QuestionsListComponent implements OnInit {
         return item.testId == testId;
     }
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
+       
         const testId: string = this.route.snapshot.params['id'];
         this.userService.getUserTestsList().subscribe((res) => {
             this.testsTaken = res.testsTaken;

@@ -23,6 +23,7 @@ import { TeamService } from './core/services/teams.service';
 import { DomainService } from './core/services/domains.service';
 
 import { EqualValidator } from './shared/equal-validator/equalValidator.directive';
+import { AuthGuard } from './core/services/auth-guard.service';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { EqualValidator } from './shared/equal-validator/equalValidator.directiv
     UserService,
     ReadingMaterialService,
     TeamService,
-    DomainService
+    DomainService,
+    AuthGuard
   ]
 
 })

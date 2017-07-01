@@ -41,9 +41,7 @@ export class TestsListComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
+        
     }
 
 }

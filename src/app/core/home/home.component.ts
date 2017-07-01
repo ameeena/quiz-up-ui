@@ -24,8 +24,6 @@ export class HomeComponent implements OnInit {
         this.userService.logout();
     }
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
+       
     }
 }

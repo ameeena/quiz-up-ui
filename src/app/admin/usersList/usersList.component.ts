@@ -37,10 +37,7 @@ export class UsersListComponent implements OnInit {
         })
     }
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
-
+      
         this.userService.getAllUsersList().subscribe(userListObtained => {
             this.userDetailsList = userListObtained;
         });

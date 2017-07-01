@@ -18,23 +18,26 @@ import { UsersListComponent } from './admin/usersList/usersList.component';
 import { TestsListComponent } from './admin/testsList/testsList.component';
 import { UploadReadingMaterialComponent } from './admin/uploadReadingMaterialLinks/uploadReadingMaterialLinks.component';
 
+import { AuthGuard } from './core/services/auth-guard.service';
+
 const appRoutes: Routes = [
     { path: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     {
         path: 'home',
         component: HomeComponent,
+        canActivate: [AuthGuard],
         children: [
             { path: '', component: DashboardComponent },
             { path: 'availableTests', component: AvailableTestsComponent },
-            { path: 'completedTests', component: CompletedTestsComponent },                        
+            { path: 'completedTests', component: CompletedTestsComponent },
             { path: 'beginQuiz/:quizId', component: QuizInstructionsComponent },
             { path: 'actualQuiz/:quizId', component: ActualQuizComponent },
             { path: 'questionsList/:id', component: QuestionsListComponent },
-            { path: 'teamBasedScores', component: TeamScoresComponent },  
-            { path: 'createTest', component: AddTestComponent },                      
+            { path: 'teamBasedScores', component: TeamScoresComponent },
+            { path: 'createTest', component: AddTestComponent },
             { path: 'usersList', component: UsersListComponent },
-            { path: 'testsList', component: TestsListComponent },            
+            { path: 'testsList', component: TestsListComponent },
             { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent }
         ]
     },
@@ -48,10 +51,11 @@ const appRoutes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = 
+export const routedComponents =
     [
         LoginComponent,
         HomeComponent,
         PageNotFoundComponent,
         DashboardComponent
+    // tslint:disable-next-line:eofline
     ];

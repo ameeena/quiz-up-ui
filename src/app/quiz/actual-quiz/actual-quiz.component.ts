@@ -32,11 +32,7 @@ export class ActualQuizComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (!this.userService.isLoggedIn()) {
-      this.router.navigate(['']);
-    }
-    // this.testId = this.route.snapshot.params['id'];
-
+    // this.testId = this.route.snapshot.params['id']
     this.questionService.getTestBasedOnId(this.testId).subscribe((testData) => {
       this.quizData = testData;
       this.initializeQuestion(0);

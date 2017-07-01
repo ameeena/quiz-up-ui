@@ -91,23 +91,23 @@ export class UserService{
         let user={
             username:localStorage.getItem('auth_token')
         }
-        let body=JSON.stringify(user);
+        let body =JSON.stringify(user);
         let headers = new Headers({ 'Content-Type': 'application/json' });
     	let options = new RequestOptions({ headers: headers });
 
         return this.http.post(this._getUserTestsListURL,body,options)
-            .map(res=>res.json())
+            .map(res=> res.json())
             .catch(this.handleError);
     }
 
     deleteUserBasedOnUserName(username:string){
-        let user={
+        const user={
             username:username
         }
 
-        let body=JSON.stringify(user);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-    	let options = new RequestOptions({ headers: headers });
+        const body=JSON.stringify(user);
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+    	const options = new RequestOptions({ headers: headers });
 
         return this.http.post(this._deleteUserBasedOnUserNameURL,body,options)
             .map((res)=>this.getMessages(res))
@@ -115,41 +115,41 @@ export class UserService{
 
     }
     getUsersTeamName(){
-        let user={
+        const user={
             username:localStorage.getItem('auth_token')
         }
-        let body=JSON.stringify(user);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-    	let options = new RequestOptions({ headers: headers });
+        const body=JSON.stringify(user);
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+    	const options = new RequestOptions({ headers: headers });
 
         return this.http.post(this._getUserTeamNameUrl,body,options)
-            .map((res)=>res.json())
+            .map((res) => res.json())
             .catch(this.handleError);
     }
     // updateTeamScore(teamName:string,teamScore:number){
-    //     console.log("Team details");  
+    //     console.log("Team details");
     //     let team ={
     //        teamName:teamName,
     //        teamScore:teamScore
     //     }
     //     let body=JSON.stringify(team);
     //     let headers = new Headers({ 'Content-Type': 'application/json' });
-    //     let options = new RequestOptions({ headers: headers });        
+    //     let options = new RequestOptions({ headers: headers });
     //     return this.http.post(this.updateTeamScoreUrl,body,options).map((res)=>this.getMessages(res)).catch(this.handleError);
-    // }   
+    // }
 
 
 
-    logout(){                
+    logout(){
         localStorage.removeItem('auth_token');
         this.loggedIn = false;
     }
-    
+
     private handleError(error: Response) {
 		console.error(error);
 		return Observable.throw(error.json().message || 'Server error');
 	}
-    private getMessages(messageObject:Response){
+    private getMessages(messageObject: Response){
         return messageObject.json().message;
     }
 

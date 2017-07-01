@@ -101,9 +101,6 @@ export class AddTestComponent implements OnInit {
         this.tests.questions.splice(questionNumber, 1);
     }
     ngOnInit() {
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
-
+        
     }
 }

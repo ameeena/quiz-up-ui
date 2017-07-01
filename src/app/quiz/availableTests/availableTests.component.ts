@@ -16,55 +16,53 @@ export class AvailableTestsComponent implements OnInit {
     listOfQuestions: any;
     listOfAvailableTests: Quiz[];
     listOfAvailableTestsResult: Quiz[] = [];
+    // tslint:disable-next-line:no-inferrable-types
     isNotPres: boolean = true;
+    // tslint:disable-next-line:no-inferrable-types
     isAvailbleTests: boolean = false;
-    //get list of all tests.
-    //get user Details
+    // get list of all tests.
+    // get user Details
     // check if the user has any tests taken
-    //if yes then dont show that
-    //check if the user array has any tests!
+    // if yes then dont show that
+    // check if the user array has any tests!
     constructor(private userService: UserService,
         private questionService: QuestionService,
         private router: Router) {
+
+            }
+    ngOnInit() {
         this.listOfAvailableTests = [];
         this.listOfAllTests = [];
-        questionService.getTests().subscribe((results) => {
+        this.questionService.getTests().subscribe((results) => {
             this.listOfAvailableTests = results;
             if (this.listOfAvailableTests != null) {
                 this.listOfAvailableTestsResult = this.listOfAvailableTests;
                 this.isAvailbleTests = true;
             }
+            // tslint:disable-next-line:one-line
             else {
                 this.isAvailbleTests = false;
             }
         });
         // userService.getUserTestsList().subscribe((results)=>{
         //     if(results!=null){
-        //         this.testsTakenList.testsTaken=results.testsTaken;  
+        //         this.testsTakenList.testsTaken=results.testsTaken;
         //     for(var i=0;i<this.listOfAllTests.length;i++){
         //         for(var j=0;j<this.testsTakenList.testsTaken.length;j++){
-        //             if(this.listOfAllTests[i]._id===this.testsTakenList.testsTaken[j].testId){                                        
+        //             if(this.listOfAllTests[i]._id===this.testsTakenList.testsTaken[j].testId){
         //                 this.isNotPres=false;
-        //                 break;                                      
+        //                 break;
         //             }
-        //         }                                
-        //         if(this.isNotPres==true){
-        //             this.listOfAvailableTests.push(this.listOfAllTests[i]);                                   
         //         }
-        //         this.isNotPres=true;                                
-        //     }             
+        //         if(this.isNotPres==true){
+        //             this.listOfAvailableTests.push(this.listOfAllTests[i]);
+        //         }
+        //         this.isNotPres=true;
+        //     }
         //     }
 
-        // });        
-
+        // });
     }
 
-    ngOnInit() {
-        console.log(this.userService.isLoggedIn());
-        if (!this.userService.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
-
-    }
-
+// tslint:disable-next-line:eofline
 }
