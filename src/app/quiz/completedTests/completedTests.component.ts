@@ -14,6 +14,7 @@ import { QuestionService } from '../../core/services/question.service';
 export class CompletedTestsComponent implements OnInit {
     userDetails = new Users();
     listOfTestsTaken: any;
+    // tslint:disable-next-line:no-inferrable-types
     isTestsTaken: boolean = false;
 
     constructor(private userSerive: UserService,
@@ -25,19 +26,16 @@ export class CompletedTestsComponent implements OnInit {
         this.router.navigate(['/home/questionsList', testId]);
     }
     ngOnInit() {
-        if (!this.userSerive.isLoggedIn()) {
-            this.router.navigate(['/']);
-        }
         this.userSerive.getUserTestsList().subscribe((results) => {
             this.userDetails = results;
             if (this.userDetails != null) {
                 this.listOfTestsTaken = this.userDetails.testsTaken;
                 this.isTestsTaken = true;
             }
+            // tslint:disable-next-line:one-line
             else {
                 this.isTestsTaken = false;
             }
-
-        })
+        });
     }
 }
