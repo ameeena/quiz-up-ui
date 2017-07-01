@@ -7,14 +7,15 @@ import { QuestionService } from './../services/question.service';
 import { ReadingMaterial } from './../model/readingMaterial.model';
 import { ReadingMaterialService } from './../services/readingMaterial.service';
 
+
 @Component({
     moduleId: module.id,
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.scss']
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['dashboard.component.scss']
 
 })
 export class DashboardComponent implements OnInit {
-
+   
     public chartOptions: any = {
         responsive: true
     };
@@ -31,7 +32,7 @@ export class DashboardComponent implements OnInit {
             pointHoverBackgroundColor: '#990099',
             pointHoverBorderColor: '#990099',
 
-        }]
+        }];
     userDetails = new Users();
     listOfTestsTaken: [{
         testId: string;
@@ -43,7 +44,7 @@ export class DashboardComponent implements OnInit {
             selectedIndex: number;
             questionId: string
         }]
-    }]
+    }];
     labels: string[] = [];
     data: any[] = [];
 
@@ -65,11 +66,13 @@ export class DashboardComponent implements OnInit {
     listOfEmbeddedLinks: ReadingMaterial[] = [];
     listOfInfoMissiles: ReadingMaterial[] = [];
 
+
+
     constructor(private router: Router,
         private userSerive: UserService,
         private questionService: QuestionService,
         private readingMaterialService: ReadingMaterialService) {
-
+            
     }
     // events
     public chartClicked(e: any): void {
@@ -113,31 +116,31 @@ export class DashboardComponent implements OnInit {
         this.readingMaterialService.getListsOfReadingMaterials().subscribe((res) => {
             this.listOfReadingMaterials = res;
             this.listOfReadingMaterials.filter((item) => {
-                if (item.domainName == "Web") {
+                if (item.domainName == 'Web') {
                     this.listOfWebAppLinks.push(item);
                 }
-                else if (item.domainName == "Desktop") {
+                else if (item.domainName == 'Desktop') {
                     this.listOfDesktopApp.push(item);
                 }
-                else if (item.domainName == "PLC") {
+                else if (item.domainName == 'PLC') {
                     this.listOfPlcLinks.push(item);
                 }
-                else if (item.domainName == "Embedded") {
+                else if (item.domainName == 'Embedded') {
                     this.listOfEmbeddedLinks.push(item);
                 }
-                else if (item.domainName == "InfoMissiles") {
+                else if (item.domainName == 'InfoMissiles') {
                     this.listOfInfoMissiles.push(item);
                 }
-                else if (item.domainName == "Random") {
+                else if (item.domainName == 'Random') {
                     this.listOfRandomStuff.push(item);
                 }
-            })
+            });
             console.log(this.listOfRandomStuff);
         });
     }
     ngOnInit() {
         
-        //get user details of the test.
+        // get user details of the test.
         this.userSerive.getUserTestsList().subscribe((results) => {
             this.userDetails = results;
             this.listOfTestsTaken = this.userDetails.testsTaken;

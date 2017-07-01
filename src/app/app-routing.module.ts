@@ -12,6 +12,8 @@ import { QuizInstructionsComponent } from './quiz/quiz-instructions/quiz-instruc
 import { ActualQuizComponent } from './quiz/actual-quiz/actual-quiz.component';
 import { QuestionsListComponent } from './quiz/questionsList/questionsList.component';
 import { TeamScoresComponent } from './quiz/teamBasedScores/teamScores.component';
+import { TeamScoresGraphComponent } from './quiz/teamScoresAsGraph/teamScoresAsGraph.component';
+
 
 import { AddTestComponent } from './admin/addTests/addTest.component';
 import { UsersListComponent } from './admin/usersList/usersList.component';
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
             { path: 'createTest', component: AddTestComponent },
             { path: 'usersList', component: UsersListComponent },
             { path: 'testsList', component: TestsListComponent },
-            { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent }
+            { path: 'uploadReadingMaterialLinks', component: UploadReadingMaterialComponent },
+            {path:  'teamScoresGraph', component:TeamScoresGraphComponent}
         ]
     },
     { path: '**', component: PageNotFoundComponent }

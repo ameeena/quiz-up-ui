@@ -5,8 +5,7 @@
                 <a class="nav-link navbar-brand firstElement" [routerLink]="['/home']" routerLinkActive="active">QuizUp</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]"
-                    routerLinkActive="active">Hello {{username}}</a>
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" [routerLink]="['/home',{outlets: {'router1':['quizUp'] }}]" routerLinkActive="active">Hello {{username}}</a>
 
             </li>
             <!--<li class="nav-item"><a class="nav-link" [routerLink]="[ '/registrationAndLogin'] " routerLinkActive="active"> Register </a></li>-->
@@ -18,6 +17,7 @@
                     <a class="dropdown-item" [routerLink]="['usersList']" routerLinkActive="active">Users List</a>
                     <a class="dropdown-item" [routerLink]="['uploadReadingMaterialLinks']" routerLinkActive="active">Add Reading Material</a>
                     <a class="dropdown-item" [routerLink]="['teamBasedScores']" routerLinkActive="active">Team Scores</a>
+                    <a class="dropdown-item" [routerLink]="['teamScoresGraph']" routerLinkActive="active">Team Scores Graph</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -37,5 +37,5 @@
     <section class="home-content">
         <router-outlet></router-outlet>
     </section>
-    <footer></footer>
+    <footer "></footer>
 </section>
