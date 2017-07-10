@@ -2,7 +2,7 @@
   <h2 class="title" *ngIf="quizData">{{quizData.name}}</h2>
   <h6 class="tag-line" *ngIf="quizData">{{quizData.domain}}</h6>
   <section class="quiz-timer">
-    <app-timer direction="down" [duration]="quizDuration" (timerEnd)="terminateQuiz($event)"></app-timer>
+    <app-timer [direction]="'down'" [duration]="quizDuration" (timerEnd)="terminateQuiz($event)"></app-timer>
   </section>
   <section class="current-question">
     <app-quiz-question usage="attempt" [question]="currentQuestion" (questionAttempted)="submitAnswer($event)"></app-quiz-question>
