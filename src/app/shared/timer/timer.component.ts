@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-timer',
@@ -8,10 +9,12 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 export class TimerComponent implements OnInit {
 
   private _duration: number;
-  
+  private elapsedSeconds: number;
+
   @Input()
-  set duration(duration: number) {
-    this._duration = duration;
+  set duration(value: number) {
+    this.elapsedSeconds = 0;
+    this._duration = value;
   }
   get duration() {
     return this._duration;
@@ -21,7 +24,14 @@ export class TimerComponent implements OnInit {
 
   @Output() timerEnd = new EventEmitter<Number>();
 
-  constructor() { }
+  constructor() {
+    
+    Observable.interval(1000)
+      .map(() => 1)
+      .subscribe((tick) => {
+        this.elapsedSeconds += tick;
+      });
+  }
 
   ngOnInit() {
   }
