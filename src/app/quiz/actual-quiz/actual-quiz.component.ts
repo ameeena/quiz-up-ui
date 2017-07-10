@@ -36,7 +36,9 @@ export class ActualQuizComponent implements OnInit {
     this.questionService.getTestBasedOnId(this.testId).subscribe((testData) => {
       this.quizData = testData;
       this.initializeQuestion(0);
-      this.quizDuration = this.quizData.duration;
+      this.quizDuration = 300;
+      console.log(this.quizDuration);
+      // this.quizDuration = this.quizData.duration;
     });
   }
 
