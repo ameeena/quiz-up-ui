@@ -7,8 +7,12 @@
   <section class="current-question">
     <app-quiz-question usage="attempt" [question]="currentQuestion" (questionAttempted)="submitAnswer($event)"></app-quiz-question>
   </section>
-  <section class="perepheral-options">
-    <button *ngIf="currentQuestionIndex != 0">Go Back</button>
-    <button>Skip Ahead</button>
+  <section class="peripheral-options">
+    <div>
+      <button [hidden]="currentQuestionIndex == 0" class="btn btn-warning" (click)="initializeQuestion(currentQuestionIndex - 1)">Go Back</button>
+    </div>
+    <div>
+      <button [hidden]="quizData?.questions?.length - 1 === currentQuestionIndex" class="btn btn-warning"  (click)="initializeQuestion(currentQuestionIndex + 1)">Skip Ahead</button>
+    </div>
   </section>
 </section>

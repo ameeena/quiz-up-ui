@@ -44,15 +44,27 @@ export class ActualQuizComponent implements OnInit {
 
   submitAnswer(attemptedAnswer: AttemptedQuestion) {
     this.attemptedAnswers.push(attemptedAnswer);
-    if (this.quizData.questions.length > this.currentQuestionIndex) {
-      this.initializeQuestion(this.currentQuestionIndex + 1);
-    }
+    this.initializeQuestion(this.currentQuestionIndex + 1);
   }
 
   initializeQuestion(questionIndex: number) {
     this.currentQuestionIndex = questionIndex;
-    this.currentQuestion = new AttemptedQuestion();
-    this.currentQuestion.question = this.quizData.questions[questionIndex];
+    if (this.quizData.questions.length > this.currentQuestionIndex) {
+      let attempt = new AttemptedQuestion();
+      attempt.question = this.quizData.questions[questionIndex];
+      this.attemptedAnswers.forEach(answer => {
+        if(answer.question._id === attempt.question._id) {
+          attempt = answer;
+        }
+      });
+      this.currentQuestion = attempt;
+    } else {
+      this.terminateQuiz();
+    }
+  }
+
+  terminateQuiz() {
+    console.log('done with the quiz');
   }
 
 }
