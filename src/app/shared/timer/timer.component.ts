@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'app-timer',
@@ -10,6 +11,7 @@ export class TimerComponent implements OnInit {
 
   private _duration: number;
   private elapsedSeconds: number;
+  private subscription : Subscription;
 
   @Input()
   set duration(value: number) {
@@ -25,15 +27,18 @@ export class TimerComponent implements OnInit {
   @Output() timerEnd = new EventEmitter<Number>();
 
   constructor() {
-    
-    Observable.interval(1000)
-      .map(() => 1)
-      .subscribe((tick) => {
-        this.elapsedSeconds += tick;
-      });
   }
 
   ngOnInit() {
+    this.subscription = Observable.interval(1000)
+      .map(() => 1)
+      .subscribe((tick) => {
+        this.elapsedSeconds += tick;
+        if(this.elapsedSeconds >= this._duration) {
+          this.subscription.unsubscribe();
+          this.timerEnd.emit();
+        }
+      });
   }
 
 }
