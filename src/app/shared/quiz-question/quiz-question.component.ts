@@ -15,8 +15,7 @@ export class QuizQuestionComponent implements OnInit {
   set question(question: AttemptedQuestion) {
     if (question && question.question && question.question.options) {
       this.exit = false;
-      this.attempt = question
-      this.attempt.answerIndex = undefined;
+      this.attempt = question;
     }
   }
   get question() {
@@ -49,7 +48,7 @@ export class QuizQuestionComponent implements OnInit {
   }
 
   submit(event: Event) {
-    if (event.srcElement.className.includes('quiz-question')) {
+    if (event.srcElement.className.includes('quiz-question exit')) {
       this.questionAttempted.emit(this.attempt);
     }
   }
